@@ -26,6 +26,7 @@ ul {
 
 button,
 a {
+  border: none;
   cursor: pointer;
   color: inherit;
   text-decoration: none; }
@@ -93,10 +94,78 @@ Buttons{
   margin: 0px auto 0px auto;
 }
 */
+@media (max-width: 767px) {
+  nav .header__burger {
+    display: block;
+    position: fixed;
+    width: 20px;
+    height: 15px;
+    margin-left: 20px;
+    margin-top: 8px;
+    z-index: 20; }
+    nav .header__burger span {
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      top: 6.5px;
+      transition: all 0.3s ease 0s; }
+  nav .header__burger::before,
+  nav .header__burger::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s; }
+  nav .header__burger::before {
+    top: 0; }
+  nav .header__burger::after {
+    bottom: 0; }
+  nav .header__burger.active::before {
+    transform: rotate(45deg);
+    top: 8.5px; }
+  nav .header__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 4.5px; }
+  nav .header__burger.active span {
+    transform: scale(0); }
+  nav .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #e8c300;
+    padding: 30px 0px 30px 0px;
+    z-index: 10;
+    transition: all 0.3s ease 0s;
+    overflow: auto; }
+    nav .header__menu.active {
+      top: 0; }
+  nav .nav {
+    display: block;
+    margin-left: 20px;
+    padding-top: 30px; }
+    nav .nav .logo_img {
+      display: none; }
+    nav .nav a:hover,
+    nav .nav a:active {
+      color: black; }
+    nav .nav a {
+      font-size: 18px;
+      line-height: 30px; }
+  nav body.lock {
+    overflow: hidden; } }
+
 nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+nav .header-burger {
+  cursor: pointer; }
 
 nav .header-menu ul {
   display: flex;
@@ -146,17 +215,169 @@ section.header {
     width: fit-content;
     margin: -40px auto 70px auto; }
 
-section.service .container {
+section.service {
+  background-color: #cae0dd; }
+  section.service .container {
+    display: flex;
+    justify-content: space-around; }
+  section.service .service-card-block {
+    position: relative; }
+    section.service .service-card-block img {
+      width: 420px;
+      height: 535px; }
+    section.service .service-card-block .service-card {
+      position: absolute;
+      left: 70px;
+      top: 80px;
+      text-align: center;
+      height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      section.service .service-card-block .service-card img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto; }
+      section.service .service-card-block .service-card .name {
+        font-family: "Heebo-Bold";
+        font-size: 32px;
+        line-height: 47px; }
+      section.service .service-card-block .service-card .descript {
+        font-size: 18px;
+        line-height: 130%;
+        max-width: 280px; }
+      section.service .service-card-block .service-card a {
+        display: block;
+        background: linear-gradient(180deg, #259385 0%, #159685 100%);
+        box-shadow: 0px 20px 40px rgba(21, 113, 101, 0.2);
+        border-radius: 50px;
+        font-family: "Heebo-Regular";
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        color: #ffffff;
+        padding: 12px 44px;
+        width: fit-content;
+        margin: 0px auto 0px auto; }
+
+section.practice {
   background-color: #cae0dd;
-  display: flex;
-  justify-content: space-between; }
+  padding-bottom: 80px;
+  position: relative; }
+  section.practice .bg-practice {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+  section.practice .wrapper-practice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    section.practice .wrapper-practice img {
+      width: 745px;
+      height: 594px; }
+  section.practice .practice-card-blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: -50px; }
+    section.practice .practice-card-blocks .practice-card-block {
+      position: relative;
+      width: 717px;
+      height: 233px; }
+      section.practice .practice-card-blocks .practice-card-block img {
+        height: 130%;
+        opacity: 0; }
+      section.practice .practice-card-blocks .practice-card-block .practice-card {
+        position: absolute;
+        top: 60px;
+        left: 80px;
+        width: 80%; }
+        section.practice .practice-card-blocks .practice-card-block .practice-card .name {
+          font-family: "Heebo-Bold";
+          font-size: 32px;
+          line-height: 47px;
+          color: rgba(0, 0, 0, 0.8);
+          margin-bottom: 10px; }
+        section.practice .practice-card-blocks .practice-card-block .practice-card .descript {
+          font-size: 24px;
+          line-height: 130%;
+          display: flex;
+          align-items: center;
+          color: rgba(0, 0, 0, 0.5); }
+        section.practice .practice-card-blocks .practice-card-block .practice-card a img {
+          width: 102px;
+          height: 24px;
+          position: absolute;
+          bottom: 0%;
+          right: 0%;
+          opacity: 0; }
+      section.practice .practice-card-blocks .practice-card-block:first-child .practice-card a img, section.practice .practice-card-blocks .practice-card-block:last-child .practice-card a img {
+        bottom: -20%; }
+    section.practice .practice-card-blocks .practice-card-block:hover img {
+      opacity: 1; }
+    section.practice .practice-card-blocks .practice-card-block:hover .practice-card a img {
+      opacity: 1; }
 
-section.service .service-card-block {
-  padding: 0 120px;
-  margin-right: 15%; }
-  section.service .service-card-block:last-child {
-    margin-right: 0; }
-
-section.service .service-card {
-  text-align: center; }
+section.breath {
+  background-color: #cae0dd;
+  background-image: url(./resrc/bg-practice.svg);
+  background-repeat: no-repeat;
+  background-size: contain; }
+  section.breath .wrapper-breath {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    section.breath .wrapper-breath img {
+      width: 696px;
+      height: 679px; }
+  section.breath .breath-card-blocks {
+    margin-top: -200px;
+    margin-left: -100px; }
+    section.breath .breath-card-blocks .breath-card-block {
+      width: 650px;
+      height: 150px;
+      position: relative; }
+      section.breath .breath-card-blocks .breath-card-block img {
+        height: 200%; }
+      section.breath .breath-card-blocks .breath-card-block .breath-card {
+        position: absolute;
+        top: 100px;
+        left: 150px; }
+        section.breath .breath-card-blocks .breath-card-block .breath-card .name {
+          font-family: "Heebo-Bold";
+          font-size: 32px;
+          line-height: 47px;
+          color: rgba(0, 0, 0, 0.8);
+          margin-bottom: 10px; }
+        section.breath .breath-card-blocks .breath-card-block .breath-card .descript {
+          font-size: 24px;
+          line-height: 130%;
+          color: rgba(0, 0, 0, 0.5); }
+      section.breath .breath-card-blocks .breath-card-block button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #259385 0%, #159685 100%);
+        box-shadow: 0px 20px 40px rgba(21, 113, 101, 0.2);
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer; }
+        section.breath .breath-card-blocks .breath-card-block button .play-but {
+          display: block;
+          width: 32px;
+          height: 32px;
+          cursor: pointer; }
+        section.breath .breath-card-blocks .breath-card-block button .stop-but {
+          display: none; }
+        section.breath .breath-card-blocks .breath-card-block button.is-playing .play-but {
+          display: none; }
+        section.breath .breath-card-blocks .breath-card-block button.is-playing .stop-but {
+          display: block;
+          width: 27px;
+          height: 27px;
+          cursor: pointer; }
 
