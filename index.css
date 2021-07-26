@@ -95,99 +95,102 @@ Buttons{
 }
 */
 @media (max-width: 767px) {
-  nav .header__burger {
-    display: block;
+  nav {
     position: fixed;
-    width: 20px;
-    height: 15px;
-    margin-left: 20px;
-    margin-top: 8px;
-    z-index: 20; }
-    nav .header__burger span {
-      background-color: white;
+    width: 100%;
+    background: white;
+    margin-top: -60px;
+    z-index: 5; }
+    nav .header__burger {
+      display: block;
+      position: absolute;
+      right: 150px;
+      width: 40px;
+      height: 30px;
+      z-index: 20; }
+      nav .header__burger span {
+        background-color: #259385;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        left: 0;
+        top: 13px;
+        transition: all 0.3s ease 0s; }
+    nav .header__burger::before,
+    nav .header__burger::after {
+      content: "";
+      background-color: #259385;
       position: absolute;
       width: 100%;
-      height: 2px;
+      height: 5px;
       left: 0;
-      top: 6.5px;
       transition: all 0.3s ease 0s; }
-  nav .header__burger::before,
-  nav .header__burger::after {
-    content: "";
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    transition: all 0.3s ease 0s; }
-  nav .header__burger::before {
-    top: 0; }
-  nav .header__burger::after {
-    bottom: 0; }
-  nav .header__burger.active::before {
-    transform: rotate(45deg);
-    top: 8.5px; }
-  nav .header__burger.active::after {
-    transform: rotate(-45deg);
-    bottom: 4.5px; }
-  nav .header__burger.active span {
-    transform: scale(0); }
-  nav .header__menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background-color: #e8c300;
-    padding: 30px 0px 30px 0px;
-    z-index: 10;
-    transition: all 0.3s ease 0s;
-    overflow: auto; }
-    nav .header__menu.active {
+    nav .header__burger::before {
       top: 0; }
-  nav .nav {
-    display: block;
-    margin-left: 20px;
-    padding-top: 30px; }
-    nav .nav .logo_img {
-      display: none; }
-    nav .nav a:hover,
-    nav .nav a:active {
-      color: black; }
-    nav .nav a {
-      font-size: 18px;
-      line-height: 30px; }
-  nav body.lock {
-    overflow: hidden; } }
+    nav .header__burger::after {
+      bottom: 0; }
+    nav .header__burger.active::before {
+      transform: rotate(45deg);
+      top: 8.5px; }
+    nav .header__burger.active::after {
+      transform: rotate(-45deg);
+      bottom: 16px; }
+    nav .header__burger.active span {
+      transform: scale(0); }
+    nav .header__menu {
+      position: fixed;
+      top: -100%;
+      right: 0;
+      width: fit-content;
+      background-color: white;
+      padding: 30px 0px 30px 0px;
+      z-index: 10;
+      transition: all 0.3s ease 0s;
+      overflow: auto; }
+      nav .header__menu.active {
+        top: 0;
+        padding-right: 20px; }
+      nav .header__menu ul {
+        flex-direction: column; }
+        nav .header__menu ul li .bottom-line {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important; }
+    nav body.lock {
+      overflow: hidden; }
+  .header {
+    margin-top: 60px; } }
 
 nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
-nav .header-burger {
+nav .header__burger {
   cursor: pointer; }
 
-nav .header-menu ul {
+nav .header__menu ul {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  nav .header-menu ul li {
+  nav .header__menu ul li {
     margin-left: 80px; }
-    nav .header-menu ul li a {
+    nav .header__menu ul li a {
       font-size: 28px;
       line-height: 41px;
       white-space: nowrap; }
-    nav .header-menu ul li .bottom-line {
+    nav .header__menu ul li .bottom-line {
       display: none; }
-    nav .header-menu ul li.active a {
+    nav .header__menu ul li.active a {
       font-size: 32px;
       line-height: 47px;
       color: #1a7f72; }
-    nav .header-menu ul li.active .bottom-line {
+    nav .header__menu ul li.active .bottom-line {
       display: block;
       background: #1a7f72;
       border-radius: 10px 10px 0px 0px;
-      height: 10px; }
+      height: 10px;
+      margin-bottom: -35px;
+      margin-top: 26px; }
 
 section.header {
   padding-top: 70px;
@@ -380,4 +383,126 @@ section.breath {
           width: 27px;
           height: 27px;
           cursor: pointer; }
+
+section.best {
+  padding-top: 70px;
+  background-image: url(./resrc/best-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center; }
+  section.best .container {
+    text-align: center; }
+  section.best .wrapper-best {
+    display: flex;
+    justify-content: space-between; }
+    section.best .wrapper-best img {
+      width: 339px;
+      height: 802px; }
+  section.best .best-card-blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: -160px; }
+  section.best .best-card-block {
+    position: relative;
+    width: 597px;
+    height: 200px; }
+    section.best .best-card-block img {
+      width: 597px;
+      height: 200%; }
+    section.best .best-card-block .best-card {
+      position: absolute;
+      top: 120px;
+      right: 40px;
+      width: 75%; }
+      section.best .best-card-block .best-card .name {
+        font-family: "Heebo-Bold";
+        font-size: 32px;
+        line-height: 47px;
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 10px;
+        text-align: end; }
+      section.best .best-card-block .best-card .descript {
+        font-size: 24px;
+        line-height: 130%;
+        color: rgba(0, 0, 0, 0.5);
+        text-align: end; }
+
+section.transform {
+  background-image: url(./resrc/transform-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center;
+  padding-bottom: 150px; }
+  section.transform h2 {
+    padding-top: 100px; }
+  section.transform .wrapper-transform {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    section.transform .wrapper-transform img.img-tr {
+      width: 703px;
+      height: 554px; }
+    section.transform .wrapper-transform:last-child img.img-tr {
+      width: 766px;
+      height: 532px; }
+    section.transform .wrapper-transform .transform-block {
+      width: 40%; }
+      section.transform .wrapper-transform .transform-block .name {
+        font-family: "Heebo-Bold";
+        font-size: 32px;
+        line-height: 47px;
+        color: rgba(0, 0, 0, 0.8); }
+      section.transform .wrapper-transform .transform-block .descript {
+        margin-top: 10px;
+        margin-bottom: 30px; }
+        section.transform .wrapper-transform .transform-block .descript p {
+          font-size: 24px;
+          line-height: 130%;
+          color: rgba(0, 0, 0, 0.5);
+          margin-top: 7px; }
+      section.transform .wrapper-transform .transform-block a {
+        display: block;
+        background: linear-gradient(180deg, #259385 0%, #159685 100%);
+        box-shadow: 0px 20px 40px rgba(21, 113, 101, 0.2);
+        border-radius: 50px;
+        font-family: "Heebo-Regular";
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        color: #ffffff;
+        padding: 12px 44px;
+        width: fit-content; }
+
+footer {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  background-image: url(./resrc/footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center; }
+  footer .container {
+    text-align: center; }
+  footer .logo {
+    width: 152px;
+    height: 124px;
+    padding-top: 30px; }
+  footer .nav {
+    margin: 30px 0; }
+    footer .nav a {
+      font-size: 28px;
+      line-height: 41px; }
+    footer .nav span {
+      display: inline-block;
+      height: 30px;
+      width: 2px;
+      background: #000000;
+      margin: 0px 20px -5px 20px; }
+  footer .soc a {
+    margin-right: 30px; }
+    footer .soc a:last-child {
+      margin-right: 0px; }
 

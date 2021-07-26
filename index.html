@@ -95,99 +95,102 @@ Buttons{
 }
 */
 @media (max-width: 767px) {
-  nav .header__burger {
-    display: block;
+  nav {
     position: fixed;
-    width: 20px;
-    height: 15px;
-    margin-left: 20px;
-    margin-top: 8px;
-    z-index: 20; }
-    nav .header__burger span {
-      background-color: white;
+    width: 100%;
+    background: white;
+    margin-top: -60px;
+    z-index: 5; }
+    nav .header__burger {
+      display: block;
+      position: absolute;
+      right: 150px;
+      width: 40px;
+      height: 30px;
+      z-index: 20; }
+      nav .header__burger span {
+        background-color: #259385;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        left: 0;
+        top: 13px;
+        transition: all 0.3s ease 0s; }
+    nav .header__burger::before,
+    nav .header__burger::after {
+      content: "";
+      background-color: #259385;
       position: absolute;
       width: 100%;
-      height: 2px;
+      height: 5px;
       left: 0;
-      top: 6.5px;
       transition: all 0.3s ease 0s; }
-  nav .header__burger::before,
-  nav .header__burger::after {
-    content: "";
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    transition: all 0.3s ease 0s; }
-  nav .header__burger::before {
-    top: 0; }
-  nav .header__burger::after {
-    bottom: 0; }
-  nav .header__burger.active::before {
-    transform: rotate(45deg);
-    top: 8.5px; }
-  nav .header__burger.active::after {
-    transform: rotate(-45deg);
-    bottom: 4.5px; }
-  nav .header__burger.active span {
-    transform: scale(0); }
-  nav .header__menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background-color: #e8c300;
-    padding: 30px 0px 30px 0px;
-    z-index: 10;
-    transition: all 0.3s ease 0s;
-    overflow: auto; }
-    nav .header__menu.active {
+    nav .header__burger::before {
       top: 0; }
-  nav .nav {
-    display: block;
-    margin-left: 20px;
-    padding-top: 30px; }
-    nav .nav .logo_img {
-      display: none; }
-    nav .nav a:hover,
-    nav .nav a:active {
-      color: black; }
-    nav .nav a {
-      font-size: 18px;
-      line-height: 30px; }
-  nav body.lock {
-    overflow: hidden; } }
+    nav .header__burger::after {
+      bottom: 0; }
+    nav .header__burger.active::before {
+      transform: rotate(45deg);
+      top: 8.5px; }
+    nav .header__burger.active::after {
+      transform: rotate(-45deg);
+      bottom: 16px; }
+    nav .header__burger.active span {
+      transform: scale(0); }
+    nav .header__menu {
+      position: fixed;
+      top: -100%;
+      right: 0;
+      width: fit-content;
+      background-color: white;
+      padding: 30px 0px 30px 0px;
+      z-index: 10;
+      transition: all 0.3s ease 0s;
+      overflow: auto; }
+      nav .header__menu.active {
+        top: 0;
+        padding-right: 20px; }
+      nav .header__menu ul {
+        flex-direction: column; }
+        nav .header__menu ul li .bottom-line {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important; }
+    nav body.lock {
+      overflow: hidden; }
+  .header {
+    margin-top: 60px; } }
 
 nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
-nav .header-burger {
+nav .header__burger {
   cursor: pointer; }
 
-nav .header-menu ul {
+nav .header__menu ul {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  nav .header-menu ul li {
+  nav .header__menu ul li {
     margin-left: 80px; }
-    nav .header-menu ul li a {
+    nav .header__menu ul li a {
       font-size: 28px;
       line-height: 41px;
       white-space: nowrap; }
-    nav .header-menu ul li .bottom-line {
+    nav .header__menu ul li .bottom-line {
       display: none; }
-    nav .header-menu ul li.active a {
+    nav .header__menu ul li.active a {
       font-size: 32px;
       line-height: 47px;
       color: #1a7f72; }
-    nav .header-menu ul li.active .bottom-line {
+    nav .header__menu ul li.active .bottom-line {
       display: block;
       background: #1a7f72;
       border-radius: 10px 10px 0px 0px;
-      height: 10px; }
+      height: 10px;
+      margin-bottom: -35px;
+      margin-top: 26px; }
 
 section.header {
   padding-top: 70px;
@@ -381,4 +384,126 @@ section.breath {
           height: 27px;
           cursor: pointer; }
 
-</style></head><body> <nav> <div class="container"><img class="logo" src="./resrc/logo.svg" alt=""><div class="header__burger" style="display:none;"><span></span></div><div class="header__menu"><ul> <li class="active"> <a href="">Home</a><div class="bottom-line"></div></li><li> <a href="">Explore</a><div class="bottom-line"></div></li><li> <a href="">Classes</a><div class="bottom-line"></div></li><li> <a href="">About Us</a><div class="bottom-line"></div></li><li> <a href="">Privacy</a><div class="bottom-line"></div></li><li> <a href="">Services</a><div class="bottom-line"></div></li></ul></div></div></nav><section class="header"><div class="container"><h1>Meditations Helps You Detoxify Your Body</h1><h3>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout point of using Lorem Ipsum is that it has a more-or-less.”</h3><a>Get Start </a><img src="./resrc/header-girl.png" alt=""></div></section><section class="service"> <div class="container"> <div class="service-card-block"><img src="./resrc/service-card-left.svg" alt=""><div class="service-card"><img src="./resrc/meditation-icon.png" alt=""><div class="name">Meditation</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-center.svg" alt=""><div class="service-card"><img src="./resrc/yoga-icon.png" alt=""><div class="name">Yoga</div><div class="descript"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-right.svg" alt=""><div class="service-card"><img src="./resrc/sound-icon.png" alt=""><div class="name">Sound</div><div class="descript"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</div><a href="">Learn More</a></div></div></div></section><section class="practice"> <div class="bg-practice"><img src="./resrc/bg-pattern.svg" alt=""></div><div class="container"> <h2>Practice Wherever You Want, Whenever You Need</h2><h3>“These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best.”</h3><div class="wrapper-practice"><img src="./resrc/about-girl.png" alt=""><div class="practice-card-blocks"><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Meditation Wind</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Strees Reduction</div><div class="descript">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally can procure him some great pleasure.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Self Compassion</div><div class="descript">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div></div></div></div></section><section class="breath"> <div class="container"><h2>Take a Deep Breath</h2><h3>“Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.”</h3><div class="wrapper-breath"><div class="breath-card-blocks"><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Turning off Auto Pilot</div><div class="descript">Intriduction, Strees Assesment</div></div><audio src="./resrc/music1.mp3" id="srcAudio1" hidden> </audio><button class="playAudio" id="playAudio1"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Crazy Wind Sound</div><div class="descript">Relex Mind</div></div><audio src="./resrc/music2.mp3" id="srcAudio2" hidden> </audio><button class="playAudio" id="playAudio2"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Mental Wellness</div><div class="descript">Strees Relief</div></div><audio src="./resrc/music3.mp3" id="srcAudio3" hidden> </audio><button class="playAudio" id="playAudio3"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div></div><img src="./resrc/about-girls.png" alt=""></div></div></section><script src="./resrc/jquery-3.6.0.min.js"> </script><script src="./resrc/features.js"> </script></body></html>
+section.best {
+  padding-top: 70px;
+  background-image: url(./resrc/best-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center; }
+  section.best .container {
+    text-align: center; }
+  section.best .wrapper-best {
+    display: flex;
+    justify-content: space-between; }
+    section.best .wrapper-best img {
+      width: 339px;
+      height: 802px; }
+  section.best .best-card-blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: -160px; }
+  section.best .best-card-block {
+    position: relative;
+    width: 597px;
+    height: 200px; }
+    section.best .best-card-block img {
+      width: 597px;
+      height: 200%; }
+    section.best .best-card-block .best-card {
+      position: absolute;
+      top: 120px;
+      right: 40px;
+      width: 75%; }
+      section.best .best-card-block .best-card .name {
+        font-family: "Heebo-Bold";
+        font-size: 32px;
+        line-height: 47px;
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 10px;
+        text-align: end; }
+      section.best .best-card-block .best-card .descript {
+        font-size: 24px;
+        line-height: 130%;
+        color: rgba(0, 0, 0, 0.5);
+        text-align: end; }
+
+section.transform {
+  background-image: url(./resrc/transform-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center;
+  padding-bottom: 150px; }
+  section.transform h2 {
+    padding-top: 100px; }
+  section.transform .wrapper-transform {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    section.transform .wrapper-transform img.img-tr {
+      width: 703px;
+      height: 554px; }
+    section.transform .wrapper-transform:last-child img.img-tr {
+      width: 766px;
+      height: 532px; }
+    section.transform .wrapper-transform .transform-block {
+      width: 40%; }
+      section.transform .wrapper-transform .transform-block .name {
+        font-family: "Heebo-Bold";
+        font-size: 32px;
+        line-height: 47px;
+        color: rgba(0, 0, 0, 0.8); }
+      section.transform .wrapper-transform .transform-block .descript {
+        margin-top: 10px;
+        margin-bottom: 30px; }
+        section.transform .wrapper-transform .transform-block .descript p {
+          font-size: 24px;
+          line-height: 130%;
+          color: rgba(0, 0, 0, 0.5);
+          margin-top: 7px; }
+      section.transform .wrapper-transform .transform-block a {
+        display: block;
+        background: linear-gradient(180deg, #259385 0%, #159685 100%);
+        box-shadow: 0px 20px 40px rgba(21, 113, 101, 0.2);
+        border-radius: 50px;
+        font-family: "Heebo-Regular";
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        color: #ffffff;
+        padding: 12px 44px;
+        width: fit-content; }
+
+footer {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  background-image: url(./resrc/footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #cae0dd;
+  background-position: center; }
+  footer .container {
+    text-align: center; }
+  footer .logo {
+    width: 152px;
+    height: 124px;
+    padding-top: 30px; }
+  footer .nav {
+    margin: 30px 0; }
+    footer .nav a {
+      font-size: 28px;
+      line-height: 41px; }
+    footer .nav span {
+      display: inline-block;
+      height: 30px;
+      width: 2px;
+      background: #000000;
+      margin: 0px 20px -5px 20px; }
+  footer .soc a {
+    margin-right: 30px; }
+    footer .soc a:last-child {
+      margin-right: 0px; }
+
+</style></head><body> <nav> <div class="container"><img class="logo" src="./resrc/logo.svg" alt=""><div class="header__burger"><span></span></div><div class="header__menu"><ul> <li class="active"> <a href="">Home</a><div class="bottom-line"></div></li><li> <a href="">Explore</a><div class="bottom-line"></div></li><li> <a href="">Classes</a><div class="bottom-line"></div></li><li> <a href="">About Us</a><div class="bottom-line"></div></li><li> <a href="">Privacy</a><div class="bottom-line"></div></li><li> <a href="">Services</a><div class="bottom-line"></div></li></ul></div></div></nav><section class="header"><div class="container"><h1>Meditations Helps You Detoxify Your Body</h1><h3>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout point of using Lorem Ipsum is that it has a more-or-less.”</h3><a>Get Start </a><img src="./resrc/header-girl.png" alt=""></div></section><section class="service"> <div class="container"> <div class="service-card-block"><img src="./resrc/service-card-left.svg" alt=""><div class="service-card"><img src="./resrc/meditation-icon.png" alt=""><div class="name">Meditation</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-center.svg" alt=""><div class="service-card"><img src="./resrc/yoga-icon.png" alt=""><div class="name">Yoga</div><div class="descript"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-right.svg" alt=""><div class="service-card"><img src="./resrc/sound-icon.png" alt=""><div class="name">Sound</div><div class="descript"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</div><a href="">Learn More</a></div></div></div></section><section class="practice"> <div class="bg-practice"><img src="./resrc/bg-pattern.svg" alt=""></div><div class="container"> <h2>Practice Wherever You Want, Whenever You Need</h2><h3>“These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best.”</h3><div class="wrapper-practice"><img src="./resrc/about-girl.png" alt=""><div class="practice-card-blocks"><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Meditation Wind</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Strees Reduction</div><div class="descript">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally can procure him some great pleasure.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Self Compassion</div><div class="descript">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div></div></div></div></section><section class="breath"> <div class="container"><h2>Take a Deep Breath</h2><h3>“Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.”</h3><div class="wrapper-breath"><div class="breath-card-blocks"><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Turning off Auto Pilot</div><div class="descript">Intriduction, Strees Assesment</div></div><audio src="./resrc/music1.mp3" id="srcAudio1" hidden> </audio><button class="playAudio" id="playAudio1"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Crazy Wind Sound</div><div class="descript">Relex Mind</div></div><audio src="./resrc/music2.mp3" id="srcAudio2" hidden> </audio><button class="playAudio" id="playAudio2"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Mental Wellness</div><div class="descript">Strees Relief</div></div><audio src="./resrc/music3.mp3" id="srcAudio3" hidden> </audio><button class="playAudio" id="playAudio3"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div></div><img src="./resrc/about-girls.png" alt=""></div></div></section><section class="best"> <div class="container"><h2>The Best Of Meditation</h2><h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</h3><div class="wrapper-best"><div class="best-card-blocks"><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">The Peace</div><div class="descript">which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Strength Building</div><div class="descript">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Quick Relextion</div><div class="descript">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div></div></div></div><img src="./resrc/best-girl.png" alt=""><div class="best-card-blocks"><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Relex & Refresh</div><div class="descript">The generated Lorem Ipsum is therefore always free from repetition, injected humour.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Beauty Of Body</div><div class="descript">Various versions have evolved over the years  sometimes by accident sometimes on purpose injected humour and the like.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Strees Relief</div><div class="descript">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</div></div></div></div></div></div></section><section class="transform"> <div class="container"><h2>Transform Your Body, Mind and Life Today</h2><h3>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos  sint occaecati cupiditate non provident.”</h3><div class="wrapper-transform"><img class="img-tr" src="./resrc/footer-girl-top.png" alt=""><div class="transform-block"><div class="name">Antistrees Meditation</div><div class="descript"> <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</p><p>These cases are perfectly simple and easy to distinguish. In a free hour when our power of choice is untrammelled.</p></div><a href="">Learn More</a></div></div><div class="wrapper-transform"><div class="transform-block"><div class="name">Backyark Band Meditation</div><div class="descript"> <p>To take a trivial example, which of us ever undertakes laborious physical exercise except to obtain some advantage from it...</p><p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p></div><a href="">Learn More</a></div><img class="img-tr" src="./resrc/footer-girl-bottom.png" alt=""></div></div></section><footer> <div class="container"> <img class="logo" src="./resrc/logo.svg" alt=""><div class="nav"> <a href="">Home</a><span> </span><a href="">Explore</a><span> </span><a href="">Classes</a><span> </span><a href="">About Us</a><span> </span><a href="">Privacy</a><span> </span><a href="">Services</a></div><div class="soc"> <a href=""> <img src="./resrc/facebook.svg" alt=""></a><a href=""> <img src="./resrc/insta.svg" alt=""></a><a href=""> <img src="./resrc/twitter.svg" alt=""></a></div></div></footer><script src="./resrc/jquery-3.6.0.min.js"> </script><script src="./resrc/features.js"> </script></body></html>
