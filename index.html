@@ -94,72 +94,6 @@ Buttons{
   margin: 0px auto 0px auto;
 }
 */
-@media (max-width: 767px) {
-  nav {
-    position: fixed;
-    width: 100%;
-    background: white;
-    margin-top: -60px;
-    z-index: 5; }
-    nav .header__burger {
-      display: block;
-      position: absolute;
-      right: 150px;
-      width: 40px;
-      height: 30px;
-      z-index: 20; }
-      nav .header__burger span {
-        background-color: #259385;
-        position: absolute;
-        width: 100%;
-        height: 5px;
-        left: 0;
-        top: 13px;
-        transition: all 0.3s ease 0s; }
-    nav .header__burger::before,
-    nav .header__burger::after {
-      content: "";
-      background-color: #259385;
-      position: absolute;
-      width: 100%;
-      height: 5px;
-      left: 0;
-      transition: all 0.3s ease 0s; }
-    nav .header__burger::before {
-      top: 0; }
-    nav .header__burger::after {
-      bottom: 0; }
-    nav .header__burger.active::before {
-      transform: rotate(45deg);
-      top: 8.5px; }
-    nav .header__burger.active::after {
-      transform: rotate(-45deg);
-      bottom: 16px; }
-    nav .header__burger.active span {
-      transform: scale(0); }
-    nav .header__menu {
-      position: fixed;
-      top: -100%;
-      right: 0;
-      width: fit-content;
-      background-color: white;
-      padding: 30px 0px 30px 0px;
-      z-index: 10;
-      transition: all 0.3s ease 0s;
-      overflow: auto; }
-      nav .header__menu.active {
-        top: 0;
-        padding-right: 20px; }
-      nav .header__menu ul {
-        flex-direction: column; }
-        nav .header__menu ul li .bottom-line {
-          margin-top: 0 !important;
-          margin-bottom: 0 !important; }
-    nav body.lock {
-      overflow: hidden; }
-  .header {
-    margin-top: 60px; } }
-
 nav .container {
   display: flex;
   justify-content: space-between;
@@ -190,7 +124,7 @@ nav .header__menu ul {
       border-radius: 10px 10px 0px 0px;
       height: 10px;
       margin-bottom: -35px;
-      margin-top: 26px; }
+      margin-top: 27px; }
 
 section.header {
   padding-top: 70px;
@@ -222,7 +156,8 @@ section.service {
   background-color: #cae0dd; }
   section.service .container {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
   section.service .service-card-block {
     position: relative; }
     section.service .service-card-block img {
@@ -289,6 +224,7 @@ section.practice {
       height: 233px; }
       section.practice .practice-card-blocks .practice-card-block img {
         height: 130%;
+        width: 745px;
         opacity: 0; }
       section.practice .practice-card-blocks .practice-card-block .practice-card {
         position: absolute;
@@ -329,7 +265,8 @@ section.breath {
   section.breath .wrapper-breath {
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    margin-top: -50px; }
     section.breath .wrapper-breath img {
       width: 696px;
       height: 679px; }
@@ -339,9 +276,11 @@ section.breath {
     section.breath .breath-card-blocks .breath-card-block {
       width: 650px;
       height: 150px;
-      position: relative; }
+      position: relative;
+      margin-bottom: 30px; }
       section.breath .breath-card-blocks .breath-card-block img {
-        height: 200%; }
+        height: 200%;
+        width: 760px; }
       section.breath .breath-card-blocks .breath-card-block .breath-card {
         position: absolute;
         top: 100px;
@@ -385,7 +324,8 @@ section.breath {
           cursor: pointer; }
 
 section.best {
-  padding-top: 70px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-image: url(./resrc/best-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -395,39 +335,57 @@ section.best {
     text-align: center; }
   section.best .wrapper-best {
     display: flex;
-    justify-content: space-between; }
-    section.best .wrapper-best img {
+    justify-content: space-between;
+    position: relative;
+    margin-top: 70px; }
+    section.best .wrapper-best > img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, 0%);
       width: 339px;
       height: 802px; }
   section.best .best-card-blocks {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: -160px; }
+    margin-top: -160px;
+    z-index: 3; }
+    section.best .best-card-blocks.best-card-blocks-left .best-card {
+      right: 35px; }
+      section.best .best-card-blocks.best-card-blocks-left .best-card .name,
+      section.best .best-card-blocks.best-card-blocks-left .best-card .descript {
+        text-align: end; }
+    section.best .best-card-blocks.best-card-blocks-right .best-card {
+      left: 35px; }
+      section.best .best-card-blocks.best-card-blocks-right .best-card .name,
+      section.best .best-card-blocks.best-card-blocks-right .best-card .descript {
+        text-align: start; }
   section.best .best-card-block {
     position: relative;
     width: 597px;
-    height: 200px; }
+    height: 200px;
+    margin-bottom: 100px; }
+    section.best .best-card-block:first-child {
+      margin-top: 70px; }
     section.best .best-card-block img {
       width: 597px;
       height: 200%; }
     section.best .best-card-block .best-card {
       position: absolute;
       top: 120px;
-      right: 40px;
       width: 75%; }
       section.best .best-card-block .best-card .name {
         font-family: "Heebo-Bold";
         font-size: 32px;
         line-height: 47px;
         color: rgba(0, 0, 0, 0.8);
-        margin-bottom: 10px;
-        text-align: end; }
+        margin-bottom: 10px; }
       section.best .best-card-block .best-card .descript {
         font-size: 24px;
         line-height: 130%;
-        color: rgba(0, 0, 0, 0.5);
-        text-align: end; }
+        color: rgba(0, 0, 0, 0.5); }
 
 section.transform {
   background-image: url(./resrc/transform-bg.svg);
@@ -506,4 +464,351 @@ footer {
     footer .soc a:last-child {
       margin-right: 0px; }
 
-</style></head><body> <nav> <div class="container"><img class="logo" src="./resrc/logo.svg" alt=""><div class="header__burger"><span></span></div><div class="header__menu"><ul> <li class="active"> <a href="">Home</a><div class="bottom-line"></div></li><li> <a href="">Explore</a><div class="bottom-line"></div></li><li> <a href="">Classes</a><div class="bottom-line"></div></li><li> <a href="">About Us</a><div class="bottom-line"></div></li><li> <a href="">Privacy</a><div class="bottom-line"></div></li><li> <a href="">Services</a><div class="bottom-line"></div></li></ul></div></div></nav><section class="header"><div class="container"><h1>Meditations Helps You Detoxify Your Body</h1><h3>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout point of using Lorem Ipsum is that it has a more-or-less.”</h3><a>Get Start </a><img src="./resrc/header-girl.png" alt=""></div></section><section class="service"> <div class="container"> <div class="service-card-block"><img src="./resrc/service-card-left.svg" alt=""><div class="service-card"><img src="./resrc/meditation-icon.png" alt=""><div class="name">Meditation</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-center.svg" alt=""><div class="service-card"><img src="./resrc/yoga-icon.png" alt=""><div class="name">Yoga</div><div class="descript"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-right.svg" alt=""><div class="service-card"><img src="./resrc/sound-icon.png" alt=""><div class="name">Sound</div><div class="descript"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</div><a href="">Learn More</a></div></div></div></section><section class="practice"> <div class="bg-practice"><img src="./resrc/bg-pattern.svg" alt=""></div><div class="container"> <h2>Practice Wherever You Want, Whenever You Need</h2><h3>“These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best.”</h3><div class="wrapper-practice"><img src="./resrc/about-girl.png" alt=""><div class="practice-card-blocks"><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Meditation Wind</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Strees Reduction</div><div class="descript">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally can procure him some great pleasure.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Self Compassion</div><div class="descript">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div></div></div></div></section><section class="breath"> <div class="container"><h2>Take a Deep Breath</h2><h3>“Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.”</h3><div class="wrapper-breath"><div class="breath-card-blocks"><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Turning off Auto Pilot</div><div class="descript">Intriduction, Strees Assesment</div></div><audio src="./resrc/music1.mp3" id="srcAudio1" hidden> </audio><button class="playAudio" id="playAudio1"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Crazy Wind Sound</div><div class="descript">Relex Mind</div></div><audio src="./resrc/music2.mp3" id="srcAudio2" hidden> </audio><button class="playAudio" id="playAudio2"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Mental Wellness</div><div class="descript">Strees Relief</div></div><audio src="./resrc/music3.mp3" id="srcAudio3" hidden> </audio><button class="playAudio" id="playAudio3"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div></div><img src="./resrc/about-girls.png" alt=""></div></div></section><section class="best"> <div class="container"><h2>The Best Of Meditation</h2><h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</h3><div class="wrapper-best"><div class="best-card-blocks"><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">The Peace</div><div class="descript">which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Strength Building</div><div class="descript">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Quick Relextion</div><div class="descript">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div></div></div></div><img src="./resrc/best-girl.png" alt=""><div class="best-card-blocks"><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Relex & Refresh</div><div class="descript">The generated Lorem Ipsum is therefore always free from repetition, injected humour.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Beauty Of Body</div><div class="descript">Various versions have evolved over the years  sometimes by accident sometimes on purpose injected humour and the like.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Strees Relief</div><div class="descript">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</div></div></div></div></div></div></section><section class="transform"> <div class="container"><h2>Transform Your Body, Mind and Life Today</h2><h3>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos  sint occaecati cupiditate non provident.”</h3><div class="wrapper-transform"><img class="img-tr" src="./resrc/footer-girl-top.png" alt=""><div class="transform-block"><div class="name">Antistrees Meditation</div><div class="descript"> <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</p><p>These cases are perfectly simple and easy to distinguish. In a free hour when our power of choice is untrammelled.</p></div><a href="">Learn More</a></div></div><div class="wrapper-transform"><div class="transform-block"><div class="name">Backyark Band Meditation</div><div class="descript"> <p>To take a trivial example, which of us ever undertakes laborious physical exercise except to obtain some advantage from it...</p><p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p></div><a href="">Learn More</a></div><img class="img-tr" src="./resrc/footer-girl-bottom.png" alt=""></div></div></section><footer> <div class="container"> <img class="logo" src="./resrc/logo.svg" alt=""><div class="nav"> <a href="">Home</a><span> </span><a href="">Explore</a><span> </span><a href="">Classes</a><span> </span><a href="">About Us</a><span> </span><a href="">Privacy</a><span> </span><a href="">Services</a></div><div class="soc"> <a href=""> <img src="./resrc/facebook.svg" alt=""></a><a href=""> <img src="./resrc/insta.svg" alt=""></a><a href=""> <img src="./resrc/twitter.svg" alt=""></a></div></div></footer><script src="./resrc/jquery-3.6.0.min.js"> </script><script src="./resrc/features.js"> </script></body></html>
+@media (max-width: 1440px) {
+  nav .header__menu ul li {
+    margin-left: 50px; }
+    nav .header__menu ul li a {
+      font-size: 25px; }
+    nav .header__menu ul li.active a {
+      font-size: 29px; }
+  section.practice .wrapper-practice img.girl {
+    width: 505px;
+    height: 394px; }
+  section.best .best-card-block {
+    margin-top: -50px;
+    width: 500px; }
+    section.best .best-card-block img {
+      width: 500px; }
+    section.best .best-card-block .best-card {
+      width: 85%; }
+      section.best .best-card-block .best-card .name {
+        font-size: 30px; }
+      section.best .best-card-block .best-card .descript {
+        font-size: 20px; }
+  section.transform .wrapper-transform img.img-tr {
+    width: 503px;
+    height: 354px; }
+  section.transform .wrapper-transform:last-child img.img-tr {
+    width: 566px;
+    height: 332px; } }
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 100px; }
+  nav .header__menu ul li {
+    margin-left: 30px; }
+    nav .header__menu ul li a {
+      font-size: 21px; }
+    nav .header__menu ul li.active a {
+      font-size: 25px; }
+  section.practice {
+    background-image: url(./resrc/about-girl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; }
+    section.practice .wrapper-practice img.girl {
+      display: none; }
+  section.breath {
+    background-image: url(./resrc/about-girls.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding-bottom: 100px; }
+    section.breath .wrapper-breath .breath-card-blocks {
+      margin-top: 0px; }
+    section.breath .wrapper-breath > img {
+      display: none; }
+  section.best .wrapper-best {
+    margin-left: -20px;
+    flex-direction: column; }
+    section.best .wrapper-best > img {
+      transform: translate(30%, 40%); } }
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0px 60px; }
+  nav .header__menu ul li {
+    margin-left: 15px; }
+  section.best .wrapper-best > img {
+    transform: translate(0%, 40%); }
+  section.transform .wrapper-transform {
+    position: relative; }
+    section.transform .wrapper-transform .img-tr {
+      position: absolute;
+      opacity: 0.5; }
+    section.transform .wrapper-transform .transform-block {
+      z-index: 3;
+      margin-left: 60%; }
+    section.transform .wrapper-transform:last-child {
+      margin-top: 50px; }
+      section.transform .wrapper-transform:last-child .transform-block {
+        margin-left: 0%; }
+      section.transform .wrapper-transform:last-child img.img-tr {
+        right: 0; } }
+
+@media (max-width: 767px) {
+  nav {
+    position: fixed;
+    width: 100%;
+    background: white;
+    margin-top: -60px;
+    z-index: 5; }
+    nav .header__burger {
+      display: block;
+      position: absolute;
+      right: 60px;
+      width: 40px;
+      height: 30px;
+      z-index: 20; }
+      nav .header__burger span {
+        background-color: #259385;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        left: 0;
+        top: 13px;
+        transition: all 0.3s ease 0s; }
+    nav .header__burger::before,
+    nav .header__burger::after {
+      content: "";
+      background-color: #259385;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      left: 0;
+      transition: all 0.3s ease 0s; }
+    nav .header__burger::before {
+      top: 0; }
+    nav .header__burger::after {
+      bottom: 0; }
+    nav .header__burger.active::before {
+      transform: rotate(45deg);
+      top: 8.5px; }
+    nav .header__burger.active::after {
+      transform: rotate(-45deg);
+      bottom: 16px; }
+    nav .header__burger.active span {
+      transform: scale(0); }
+    nav .header__menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100%;
+      background-color: white;
+      z-index: 10;
+      transition: all 0.5s ease 0s;
+      overflow: auto;
+      margin-top: 115px; }
+      nav .header__menu.active {
+        right: 0; }
+      nav .header__menu ul {
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%; }
+        nav .header__menu ul li a {
+          font-size: 28px;
+          line-height: 41px; }
+        nav .header__menu ul li.active {
+          font-size: 32px;
+          line-height: 47px; }
+        nav .header__menu ul li .bottom-line {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important; }
+    nav body.lock {
+      overflow: hidden; }
+  section.header {
+    margin-top: 60px; }
+    section.header img {
+      width: 491px;
+      height: 458px; }
+  section.practice .practice-card-blocks .practice-card-block {
+    width: 545px; }
+    section.practice .practice-card-blocks .practice-card-block img {
+      width: 545px; }
+    section.practice .practice-card-blocks .practice-card-block .practice-card {
+      width: 75%; }
+      section.practice .practice-card-blocks .practice-card-block .practice-card .name {
+        font-size: 28px;
+        margin-bottom: 0px;
+        margin-top: 10px; }
+      section.practice .practice-card-blocks .practice-card-block .practice-card .descript {
+        font-size: 20px; }
+      section.practice .practice-card-blocks .practice-card-block .practice-card a img {
+        top: 10%; }
+  section.breath .wrapper-breath .breath-card-blocks .breath-card-block {
+    width: 570px; }
+    section.breath .wrapper-breath .breath-card-blocks .breath-card-block > img {
+      width: 600px; }
+  section.best .wrapper-best > img {
+    transform: translate(-20%, 85%); }
+  section.transform .wrapper-transform .transform-block {
+    width: 60%;
+    margin-left: 40%; }
+  section.transform .wrapper-transform:last-child {
+    margin-top: 50px; }
+    section.transform .wrapper-transform:last-child .transform-block {
+      margin-left: 0%; } }
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 60px; }
+  h2 {
+    font-size: 46px; }
+  section.header img {
+    width: 391px;
+    height: 358px; }
+  section.practice .practice-card-blocks {
+    width: 100%; }
+    section.practice .practice-card-blocks .practice-card-block {
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px 0; }
+      section.practice .practice-card-blocks .practice-card-block img {
+        display: none; }
+      section.practice .practice-card-blocks .practice-card-block .practice-card {
+        width: 90%;
+        left: 25px;
+        top: 15px; }
+        section.practice .practice-card-blocks .practice-card-block .practice-card a img {
+          display: block;
+          position: initial;
+          margin: 0 auto;
+          padding: 15px; }
+      section.practice .practice-card-blocks .practice-card-block:hover {
+        background-color: white; }
+  section.breath .wrapper-breath .breath-card-blocks {
+    margin-left: -20%; }
+    section.breath .wrapper-breath .breath-card-blocks .breath-card-block {
+      width: 440px;
+      margin-bottom: 0px; }
+      section.breath .wrapper-breath .breath-card-blocks .breath-card-block > img {
+        width: 460px; }
+      section.breath .wrapper-breath .breath-card-blocks .breath-card-block .breath-card {
+        left: 100px; }
+        section.breath .wrapper-breath .breath-card-blocks .breath-card-block .breath-card .name {
+          font-size: 28px; }
+        section.breath .wrapper-breath .breath-card-blocks .breath-card-block .breath-card .descript {
+          font-size: 18px; }
+      section.breath .wrapper-breath .breath-card-blocks .breath-card-block button.playAudio {
+        bottom: -30px;
+        width: 60px;
+        height: 60px; }
+  section.best .wrapper-best > img {
+    transform: translate(-50%, 50%); }
+  section.best .best-card-block {
+    margin-top: -100px;
+    width: 400px; }
+    section.best .best-card-block img {
+      width: 380px; }
+    section.best .best-card-block .best-card {
+      width: 85%;
+      top: 140px; }
+      section.best .best-card-block .best-card .name {
+        font-size: 26px; }
+      section.best .best-card-block .best-card .descript {
+        font-size: 16px; }
+  section.transform .wrapper-transform img.img-tr {
+    width: 100%;
+    height: auto; }
+  section.transform .wrapper-transform:last-child img.img-tr {
+    width: 100%;
+    height: auto; }
+  section.transform .wrapper-transform .transform-block {
+    width: 100%;
+    margin-left: 0%; } }
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 55px; }
+  h2 {
+    font-size: 41px; }
+  h3 {
+    font-size: 20px; }
+  .container {
+    padding: 0 30px; }
+  nav .header__burger {
+    right: 30px; }
+  section.header a {
+    padding: 18px 55px !important; }
+  section.header img {
+    width: 291px;
+    height: 258px; }
+  section.practice .practice-card-blocks .practice-card-block {
+    width: 100%; }
+    section.practice .practice-card-blocks .practice-card-block .practice-card a img {
+      background-color: white; }
+  section.breath .breath-card-blocks {
+    margin-left: -12% !important; }
+    section.breath .breath-card-blocks .breath-card-block {
+      margin-top: -50px;
+      width: 370px !important; }
+      section.breath .breath-card-blocks .breath-card-block > img {
+        width: 370px !important; }
+      section.breath .breath-card-blocks .breath-card-block .name {
+        font-size: 22px !important;
+        margin-bottom: 0px !important; }
+      section.breath .breath-card-blocks .breath-card-block .descript {
+        font-size: 14px !important; }
+      section.breath .breath-card-blocks .breath-card-block button.playAudio {
+        bottom: -25px !important;
+        right: 10px !important;
+        width: 50px !important;
+        height: 50px !important; }
+      section.breath .breath-card-blocks .breath-card-block .breath-card {
+        left: 80px !important;
+        top: 110px !important; }
+  section.best .wrapper-best > img {
+    transform: translate(-50%, 50%); }
+  section.best .best-card-block {
+    margin-top: -100px;
+    width: 370px; }
+    section.best .best-card-block img {
+      width: 360px; }
+    section.best .best-card-block .best-card {
+      width: 90%;
+      top: 140px; }
+      section.best .best-card-block .best-card .name {
+        font-size: 24px; }
+      section.best .best-card-block .best-card .descript {
+        font-size: 15px; } }
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 45px; }
+  h2 {
+    font-size: 38px; }
+  section.header img {
+    width: 261px;
+    height: 228px; }
+  section.breath .breath-card-blocks {
+    margin-left: -20% !important; }
+    section.breath .breath-card-blocks .breath-card-block {
+      margin-top: -50px;
+      width: 340px !important; }
+      section.breath .breath-card-blocks .breath-card-block > img {
+        width: 330px !important; }
+      section.breath .breath-card-blocks .breath-card-block .name {
+        font-size: 20px !important;
+        margin-bottom: 0px !important; }
+      section.breath .breath-card-blocks .breath-card-block .descript {
+        font-size: 14px !important; }
+      section.breath .breath-card-blocks .breath-card-block .breath-card {
+        left: 60px !important; }
+      section.breath .breath-card-blocks .breath-card-block button.playAudio {
+        right: 20px !important; }
+  section.best .wrapper-best {
+    margin-left: -25px; }
+    section.best .wrapper-best > img {
+      transform: translate(-50%, 30%); }
+    section.best .wrapper-best .best-card-blocks-left .best-card-block .best-card {
+      right: 15px; }
+    section.best .wrapper-best .best-card-blocks-right .best-card-block .best-card {
+      left: 15px; }
+  section.best .best-card-block {
+    margin-top: -150px;
+    width: 310px; }
+    section.best .best-card-block img {
+      width: 310px; } }
+
+</style></head><body> <nav> <div class="container"><img class="logo" src="./resrc/logo.svg" alt=""><div class="header__burger"><span></span></div><div class="header__menu"><ul> <li class="active"> <a href="">Home</a><div class="bottom-line"></div></li><li> <a href="">Explore</a><div class="bottom-line"></div></li><li> <a href="">Classes</a><div class="bottom-line"></div></li><li> <a href="">About Us</a><div class="bottom-line"></div></li><li> <a href="">Privacy</a><div class="bottom-line"></div></li><li> <a href="">Services</a><div class="bottom-line"></div></li></ul></div></div></nav><section class="header"><div class="container"><h1>Meditations Helps You Detoxify Your Body</h1><h3>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout point of using Lorem Ipsum is that it has a more-or-less.”</h3><a>Get Start </a><img src="./resrc/header-girl.png" alt=""></div></section><section class="service"> <div class="container"> <div class="service-card-block"><img src="./resrc/service-card-left.svg" alt=""><div class="service-card"><img src="./resrc/meditation-icon.png" alt=""><div class="name">Meditation</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-center.svg" alt=""><div class="service-card"><img src="./resrc/yoga-icon.png" alt=""><div class="name">Yoga</div><div class="descript"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div><a href="">Learn More</a></div></div><div class="service-card-block"><img src="./resrc/service-card-right.svg" alt=""><div class="service-card"><img src="./resrc/sound-icon.png" alt=""><div class="name">Sound</div><div class="descript"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.</div><a href="">Learn More</a></div></div></div></section><section class="practice"> <div class="bg-practice"><img src="./resrc/bg-pattern.svg" alt=""></div><div class="container"> <h2>Practice Wherever You Want, Whenever You Need</h2><h3>“These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best.”</h3><div class="wrapper-practice"><img class="girl" src="./resrc/about-girl.png" alt=""><div class="practice-card-blocks"><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Meditation Wind</div><div class="descript">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Strees Reduction</div><div class="descript">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally can procure him some great pleasure.</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div><div class="practice-card-block"><img src="./resrc/practice-card.svg" alt=""><div class="practice-card"><div class="name">Self Compassion</div><div class="descript">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</div><a href=""> <img src="./resrc/arrow.svg" alt=""></a></div></div></div></div></div></section><section class="breath"> <div class="container"><h2>Take a Deep Breath</h2><h3>“Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.”</h3><div class="wrapper-breath"><div class="breath-card-blocks"><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Turning off Auto Pilot</div><div class="descript">Intriduction, Strees Assesment</div></div><audio src="./resrc/music1.mp3" id="srcAudio1" hidden> </audio><button class="playAudio" id="playAudio1"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Crazy Wind Sound</div><div class="descript">Relex Mind</div></div><audio src="./resrc/music2.mp3" id="srcAudio2" hidden> </audio><button class="playAudio" id="playAudio2"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div><div class="breath-card-block"><img src="./resrc/music-practice.svg" alt=""><div class="breath-card"><div class="name">Mental Wellness</div><div class="descript">Strees Relief</div></div><audio src="./resrc/music3.mp3" id="srcAudio3" hidden> </audio><button class="playAudio" id="playAudio3"><img class="play-but" src="./resrc/play.svg" alt=""><img class="stop-but" src="./resrc/pause.svg" alt=""></button></div></div><img src="./resrc/about-girls.png" alt=""></div></div></section><section class="best"> <div class="container"><h2>The Best Of Meditation</h2><h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</h3><div class="wrapper-best"><div class="best-card-blocks best-card-blocks-left"><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">The Peace</div><div class="descript">which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Strength Building</div><div class="descript">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</div></div></div><div class="best-card-block"><img src="./resrc/left-best-card.svg" alt=""><div class="best-card"><div class="name">Quick Relextion</div><div class="descript">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div></div></div></div><img src="./resrc/best-girl.png" alt=""><div class="best-card-blocks best-card-blocks-right"><div class="best-card-block"><img src="./resrc/right-best-card.svg" alt=""><div class="best-card"><div class="name">Relex & Refresh</div><div class="descript">The generated Lorem Ipsum is therefore always free from repetition, injected humour.</div></div></div><div class="best-card-block"><img src="./resrc/right-best-card.svg" alt=""><div class="best-card"><div class="name">Beauty Of Body</div><div class="descript">Various versions have evolved over the years  sometimes by accident sometimes on purpose injected humour and the like.</div></div></div><div class="best-card-block"><img src="./resrc/right-best-card.svg" alt=""><div class="best-card"><div class="name">Strees Relief</div><div class="descript">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</div></div></div></div></div></div></section><section class="transform"> <div class="container"><h2>Transform Your Body, Mind and Life Today</h2><h3>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos  sint occaecati cupiditate non provident.”</h3><div class="wrapper-transform"><img class="img-tr" src="./resrc/footer-girl-top.png" alt=""><div class="transform-block"><div class="name">Antistrees Meditation</div><div class="descript"> <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected.</p><p>These cases are perfectly simple and easy to distinguish. In a free hour when our power of choice is untrammelled.</p></div><a href="">Learn More</a></div></div><div class="wrapper-transform"><div class="transform-block"><div class="name">Backyark Band Meditation</div><div class="descript"> <p>To take a trivial example, which of us ever undertakes laborious physical exercise except to obtain some advantage from it...</p><p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p></div><a href="">Learn More</a></div><img class="img-tr" src="./resrc/footer-girl-bottom.png" alt=""></div></div></section><footer> <div class="container"> <img class="logo" src="./resrc/logo.svg" alt=""><div class="nav"> <a href="">Home</a><span> </span><a href="">Explore</a><span> </span><a href="">Classes</a><span> </span><a href="">About Us</a><span> </span><a href="">Privacy</a><span> </span><a href="">Services</a></div><div class="soc"> <a href=""> <img src="./resrc/facebook.svg" alt=""></a><a href=""> <img src="./resrc/insta.svg" alt=""></a><a href=""> <img src="./resrc/twitter.svg" alt=""></a></div></div></footer><script src="./resrc/jquery-3.6.0.min.js"> </script><script src="./resrc/features.js"> </script></body></html>
