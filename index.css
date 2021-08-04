@@ -10,7 +10,8 @@
 .container {
   max-width: 1620px;
   margin: 0 auto;
-  padding: 0 150px; }
+  padding: 0 150px;
+  overflow-x: hidden; }
 
 body {
   font-family: "Heebo-Regular";
@@ -669,14 +670,15 @@ footer {
       section.practice .practice-card-blocks .practice-card-block .practice-card {
         width: 90%;
         left: 25px;
-        top: 15px; }
+        top: 15px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.5); }
         section.practice .practice-card-blocks .practice-card-block .practice-card a img {
+          opacity: 1;
           display: block;
           position: initial;
           margin: 0 auto;
           padding: 15px; }
-      section.practice .practice-card-blocks .practice-card-block:hover {
-        background-color: white; }
   section.breath .wrapper-breath .breath-card-blocks {
     margin-left: -20%; }
     section.breath .wrapper-breath .breath-card-blocks .breath-card-block {
@@ -735,9 +737,8 @@ footer {
     width: 291px;
     height: 258px; }
   section.practice .practice-card-blocks .practice-card-block {
-    width: 100%; }
-    section.practice .practice-card-blocks .practice-card-block .practice-card a img {
-      background-color: white; }
+    width: 100%;
+    left: -20px; }
   section.breath .breath-card-blocks {
     margin-left: -12% !important; }
     section.breath .breath-card-blocks .breath-card-block {
